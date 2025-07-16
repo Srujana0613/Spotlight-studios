@@ -1,0 +1,38 @@
+[
+    {
+        "name": "sru",
+        "age": "18",
+        "mobile": "8074754294",
+        "email": "yogajajula@gmail.com",
+        "experience": "no",
+        "address": "ghh",
+        "health": "no",
+        "activity": "dancing",
+        "genre": "classical",
+        "specificType": "Bharatanatyam"
+    },
+    {
+        "name": "pallavi",
+        "age": "18",
+        "mobile": "6303193850",
+        "email": "yogajajula@gmail.com",
+        "experience": "no",
+        "address": "hyd",
+        "health": "no",
+        "activity": "dancing",
+        "genre": "classical",
+        "specificType": "Bharatanatyam"
+    },
+    {
+        "name": "vyshuu",
+        "age": "19",
+        "mobile": "6303193850",
+        "email": "yogajajula@gmail.com",
+        "experience": "no",
+        "address": "vij",
+        "health": "no",
+        "activity": "singing",
+        "genre": "western",
+        "specificType": "Rock"
+    }
+]

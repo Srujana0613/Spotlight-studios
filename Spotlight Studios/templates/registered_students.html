@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registered Students</title>
+    <style>
+        /* Style for registered students page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff0000;
+            font-size: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 5px 0;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Hide details initially */
+        .details {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Show details on hover and add margin to push items below down */
+        li:hover .details {
+            max-height: 200px; /* Adjust this based on the expected content height */
+            opacity: 1;
+        }
+
+        li:hover {
+            margin-bottom: 10px; /* Adds space below the hovered item */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Spotlight studios🎤🎶</h1>
+        <h2>(●'◡'●) Registered Students (●'◡'●)</h2>
+        <ul>
+            {% for student in students %}
+                <li>
+                    <strong>{{ student['name'] }}</strong>
+                    <div class="details">
+                        <strong>Age:</strong> {{ student['age'] }}<br>
+                        <strong>Mobile:</strong> {{ student['mobile'] }}<br>
+                        <strong>Email:</strong> {{ student['email'] }}<br>
+                        <strong>Experience:</strong> {{ student['experience'] }}<br>
+                        <strong>Address:</strong> {{ student['address'] }}<br>
+                        <strong>Health Issues:</strong> {{ student['health'] }}<br>
+                        <strong>Activity:</strong> {{ student['activity'] }}<br>
+                        <strong>Genre:</strong> {{ student['genre'] }}<br>
+                        <strong>Specific Type:</strong> {{ student['specificType'] }}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

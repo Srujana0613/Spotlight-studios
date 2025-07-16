@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dance Categories</title>
+    <style>
+        /* Background styling */
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* Center the main container */
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff0000;
+        }
+
+        .category {
+            margin: 20px 0;
+        }
+
+        h2 {
+            color: #555;
+            margin-bottom: 15px;
+            margin-top: 50px;
+        }
+
+        .subcategory-container {
+            display: flex;
+            justify-content: space-between;
+            /* Distributes extra space between items */
+            flex-wrap: wrap;
+            /* Allows items to wrap onto a new line */
+        }
+
+        .subcategory {
+            width: 28%;
+            /* Slightly smaller width to fit three items in a row */
+            padding: 10px;
+            margin: 10px;
+            background-color: #eeeeee;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.616);
+            text-align: center;
+        }
+
+
+        .subcategory img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .subcategory h3 {
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .reference-video {
+            margin-top: 10px;
+        }
+
+        iframe {
+            border-radius: 5px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        button:hover {
+            background-color: #f22222;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Spotlight studios🎤🎶</h1>
+        <h1>Dance Categories</h1>
+
+        <!-- Western Dance Category -->
+        <div class="category">
+            <h2>Western</h2>
+            <div class="subcategory-container">
+                <div class="subcategory">
+                    <h3>Salsa</h3>
+                    <img src="/static/assets/salsa.jpg" alt="Salsa Dance">
+                    <div class="reference-video">
+                        <h4>Reference video</h4>
+                        <iframe src="https://www.youtube.com/embed/-5og4L0RSFk" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="subcategory">
+                    <h3>Hip-hop</h3>
+                    <img src="/static/assets/hiphop.jpeg" alt="Hip-hop Dance">
+                    <div class="reference-video">
+                        <h4>Reference video</h4>
+                        <iframe src="https://www.youtube.com/embed/cxhqqpVk65Q" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="subcategory">
+                    <h3>Belly Dance</h3>
+                    <img src="/static/assets/belly.jpg" alt="Belly Dance">
+                    <div class="reference-video">
+                        <h4>Reference video</h4>
+                        <iframe src="https://www.youtube.com/embed/1RBDIrDWg3A" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Classical Dance Category -->
+        <div class="category">
+            <h2>Classical</h2>
+            <div class="subcategory-container">
+                <div class="subcategory">
+                    <h3>Kuchipudi</h3>
+                    <img src="/static/assets/kuchupudi.jpg" alt="Kuchipudi Dance">
+                    <div class="reference-video">
+                        <h4>Reference video</h4>
+                        <iframe src="https://www.youtube.com/embed/YbRX_cdTap8" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="subcategory">
+                    <h3>Kathak</h3>
+                    <img src="/static/assets/kathak.jpg" alt="Kathak Dance">
+                    <div class="reference-video">
+                        <h4>Reference video</h4>
+                        <iframe src="https://www.youtube.com/embed/UBYqv21c0Yk" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="subcategory">
+                    <h3>Bharatanatyam</h3>
+                    <img src="/static/assets/bharathanatyam.jpg" alt="Bharatanatyam Dance">
+                    <div class="reference-video">
+                        <h4>Reference video</h4>
+                        <iframe src="https://www.youtube.com/embed/JWhA3ldZcyY" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Folk Dance Category -->
+        <div class="category">
+            <h2>Folk</h2>
+            <div class="subcategory-container">
+                <div class="subcategory">
+                    <h3>Bhangra</h3>
+                    <img src="/static/assets/bhangra.jpg" alt="Bhangra Dance">
+                    <div class="reference-video">
+                        <h4>Reference video</h4>
+                        <iframe src="https://www.youtube.com/embed/YGxnLB7a4LM" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="subcategory">
+                    <h3>Garba</h3>
+                    <img src="/static/assets/garba.jpg" alt="Garba Dance">
+                    <div class="reference-video">
+                        <h4>Reference video</h4>
+                        <iframe src="https://www.youtube.com/embed/oPygsM-Pg5A" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="subcategory">
+                    <h3>Ghoomar</h3>
+                    <img src="/static/assets/ghoomar.jpg" alt="Ghoomar Dance">
+                    <div class="reference-video">
+                        <h4>Reference video</h4>
+                        <iframe src="https://www.youtube.com/embed/vLhDbzVlyNg" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="window.location.href='/register'">Register Now</button>
+    </div>
+</body>
+
+</html>

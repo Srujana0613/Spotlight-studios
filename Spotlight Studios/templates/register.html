@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Dance & Singing</title>
+    <style>
+        /* Full-screen background gradient and centering */
+        body {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Centered container for the form */
+        .container {
+            background: #ffffff;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff4b2b;
+            font-size: 2em;
+            margin-bottom: 20px;
+            margin-top: 70px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        label {
+            color: #ff416c;
+            font-weight: bold;
+            align-self: flex-start;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #ff416c;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #ff4b2b;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+
+        #genreDiv,
+        #typeDiv {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form action="/submit_registration" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="experience">Experience:</label>
+            <input type="text" id="experience" name="experience">
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address"></textarea>
+
+            <label for="health">Any Health Issues:</label>
+            <input type="text" id="health" name="health">
+
+            <label for="activity">Select Dancing/Singing:</label>
+            <select id="activity" name="activity" required onchange="fetchGenres()">
+                <option value="">--Select--</option>
+                <option value="dancing">Dancing</option>
+                <option value="singing">Singing</option>
+            </select>
+
+            <div id="genreDiv" style="display: none;">
+                <label for="genre">Select Western/Classical/Folk:</label>
+                <select id="genre" name="genre" onchange="fetchTypes()">
+                    <option value="">--Select--</option>
+                </select>
+            </div>
+
+            <div id="typeDiv" style="display: none;">
+                <label for="specificType">Select Type:</label>
+                <select id="specificType" name="specificType">
+                    <option value="">--Select--</option>
+                </select>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function fetchGenres() {
+            const activity = document.getElementById("activity").value;
+            if (activity) {
+                fetch(`/get_genres?activity=${activity}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const genreSelect = document.getElementById("genre");
+                        genreSelect.innerHTML = "<option value=''>--Select--</option>";
+                        data.genres.forEach(genre => {
+                            const option = document.createElement("option");
+                            option.value = genre;
+                            option.textContent = genre;
+                            genreSelect.appendChild(option);
+                        });
+                        document.getElementById("genreDiv").style.display = "block";
+                    });
+            } else {
+                document.getElementById("genreDiv").style.display = "none";
+                document.getElementById("typeDiv").style.display = "none";
+            }
+        }
+
+        function fetchTypes() {
+            const activity = document.getElementById("activity").value;
+            const genre = document.getElementById("genre").value;
+            if (activity && genre) {
+                fetch(`/get_types?activity=${activity}&genre=${genre}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const typeSelect = document.getElementById("specificType");
+                        typeSelect.innerHTML = "<option value=''>--Select--</option>";
+                        data.types.forEach(type => {
+                            const option = document.createElement("option");
+                            option.value = type;
+                            option.textContent = type;
+                            typeSelect.appendChild(option);
+                        });
+                        document.getElementById("typeDiv").style.display = "block";
+                    });
+            } else {
+                document.getElementById("typeDiv").style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
